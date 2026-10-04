@@ -41,7 +41,7 @@ public class ItemBlazesteelKnife extends ItemSword {
 
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer attacker, Entity targetEntity) {
-		if (targetEntity instanceof EntityParasiteBase && shouldApply(attacker)) {
+		if (shouldApply(attacker)&&targetEntity instanceof EntityParasiteBase) {
 			EntityLivingBase target = (EntityLivingBase) targetEntity;
 			if (target.isPotionActive(WAPotions.CONSECRATION)) {
 				int amp = target.getActivePotionEffect(WAPotions.CONSECRATION).getAmplifier();
@@ -64,6 +64,7 @@ public class ItemBlazesteelKnife extends ItemSword {
         if (slotIn == EntityEquipmentSlot.MAINHAND) 
       	{
             replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_SPEED, ATTACK_SPEED_MODIFIER, -2.0);
+            replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_DAMAGE, ATTACK_DAMAGE_MODIFIER, 9);
         }
       
         return modifiers;

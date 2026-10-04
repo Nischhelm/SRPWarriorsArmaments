@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import com.sweeblyn.srpwarriorsarmaments.handlers.DisplayTooltipsHandler;
 import com.sweeblyn.srpwarriorsarmaments.init.WABaubles;
 import com.sweeblyn.srpwarriorsarmaments.init.WAItems;
+import com.sweeblyn.srpwarriorsarmaments.init.WAPotionTypes;
 import com.sweeblyn.srpwarriorsarmaments.init.WAPotions;
 import com.sweeblyn.srpwarriorsarmaments.init.WARecipes;
 
@@ -31,6 +32,7 @@ public class SRPWarriorsArmaments {
     public void onPreInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(WAItems.class);
         MinecraftForge.EVENT_BUS.register(WAPotions.class);
+        MinecraftForge.EVENT_BUS.register(WAPotionTypes.class);
         MinecraftForge.EVENT_BUS.register(WARecipes.class);
         MinecraftForge.EVENT_BUS.register(DisplayTooltipsHandler.class);
         

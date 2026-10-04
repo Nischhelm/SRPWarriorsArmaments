@@ -1,16 +1,4 @@
 {
-  "srparasites:kill_root": {
-    "criteria": {
-      "tick": "2026-09-11 23:26:45 -0600"
-    },
-    "done": true
-  },
-  "srparasites:root": {
-    "criteria": {
-      "tick": "2026-09-11 23:26:45 -0600"
-    },
-    "done": true
-  },
   "minecraft:recipes/building_blocks/oak_planks": {
     "criteria": {
       "has_log": "2026-09-20 09:26:23 -0600"
@@ -23,9 +11,9 @@
     },
     "done": true
   },
-  "srparasites:secret_root": {
+  "minecraft:husbandry/root": {
     "criteria": {
-      "tick": "2026-09-11 23:26:45 -0600"
+      "consumed_item": "2026-09-30 16:34:43 -0600"
     },
     "done": true
   },
@@ -35,15 +23,88 @@
     },
     "done": true
   },
-  "minecraft:recipes/misc/gold_ingot_from_block": {
+  "minecraft:adventure/kill_a_mob": {
     "criteria": {
-      "has_gold_block": "2026-09-20 09:26:23 -0600"
+      "husk": "2026-09-30 16:34:58 -0600"
     },
     "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "husk": "2026-09-30 16:34:58 -0600"
+    },
+    "done": false
   },
   "srparasites:monument_root": {
     "criteria": {
       "tick": "2026-09-11 23:26:45 -0600"
+    },
+    "done": true
+  },
+  "srparasites:recipes/misc/srp_field_guide": {
+    "criteria": {
+      "has_flesh": "2026-10-02 14:11:08 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/stone_button": {
+    "criteria": {
+      "has_stone": "2026-09-30 16:33:55 -0600"
+    },
+    "done": true
+  },
+  "srparasites:kill_root": {
+    "criteria": {
+      "tick": "2026-09-11 23:26:45 -0600"
+    },
+    "done": true
+  },
+  "srparasites:root": {
+    "criteria": {
+      "tick": "2026-09-11 23:26:45 -0600"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "golden_apple": "2026-09-30 16:34:43 -0600",
+      "enchanted_golden_apple": "2026-10-02 14:11:45 -0600"
+    },
+    "done": false
+  },
+  "minecraft:recipes/building_blocks/stonebrick": {
+    "criteria": {
+      "has_stone": "2026-09-30 16:33:55 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_slab": {
+    "criteria": {
+      "has_stone": "2026-09-30 16:33:55 -0600"
+    },
+    "done": true
+  },
+  "srparasites:secret_root": {
+    "criteria": {
+      "tick": "2026-09-11 23:26:45 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/stone_pressure_plate": {
+    "criteria": {
+      "has_stone": "2026-09-30 16:33:55 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-09-30 16:34:58 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_ingot_from_block": {
+    "criteria": {
+      "has_gold_block": "2026-09-20 09:26:23 -0600"
     },
     "done": true
   }

@@ -151,6 +151,12 @@
     },
     "done": true
   },
+  "srparasites:recipes/misc/srp_field_guide": {
+    "criteria": {
+      "has_flesh": "2026-10-02 14:46:43 -0600"
+    },
+    "done": true
+  },
   "minecraft:recipes/misc/red_dye_from_poppy": {
     "criteria": {
       "has_red_flower": "2026-09-12 19:24:15 -0600"

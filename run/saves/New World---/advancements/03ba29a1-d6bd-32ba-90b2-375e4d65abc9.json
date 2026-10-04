@@ -5,11 +5,23 @@
     },
     "done": true
   },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "husk": "2026-09-30 16:42:35 -0600"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/iron_bars": {
     "criteria": {
       "has_iron_ingot": "2026-09-21 15:25:04 -0600"
     },
     "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "husk": "2026-09-30 16:42:35 -0600"
+    },
+    "done": false
   },
   "minecraft:recipes/combat/iron_sword": {
     "criteria": {
@@ -206,6 +218,12 @@
   "minecraft:recipes/tools/shears": {
     "criteria": {
       "has_iron_ingot": "2026-09-21 15:25:04 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-09-30 16:42:35 -0600"
     },
     "done": true
   },

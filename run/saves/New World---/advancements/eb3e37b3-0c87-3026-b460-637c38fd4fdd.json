@@ -226,6 +226,7 @@
   },
   "srparasites:kill_inborn": {
     "criteria": {
+      "k_rupter": "2026-09-25 14:23:10 -0600",
       "k_mangler": "2026-09-13 09:22:50 -0600",
       "k_gnat": "2026-09-13 09:38:23 -0600"
     },
@@ -342,6 +343,12 @@
   "minecraft:recipes/decorations/orange_stained_glass_pane": {
     "criteria": {
       "has_glass": "2026-09-13 08:52:05 -0600"
+    },
+    "done": true
+  },
+  "srparasites:recipes/misc/srp_field_guide": {
+    "criteria": {
+      "has_flesh": "2026-10-02 19:17:08 -0600"
     },
     "done": true
   },

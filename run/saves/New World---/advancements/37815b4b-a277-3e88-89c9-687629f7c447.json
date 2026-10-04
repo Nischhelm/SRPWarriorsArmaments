@@ -120,6 +120,12 @@
     },
     "done": true
   },
+  "srparasites:kill_crude": {
+    "criteria": {
+      "k_incomplete_medium": "2026-09-25 15:48:09 -0600"
+    },
+    "done": false
+  },
   "minecraft:recipes/redstone/redstone_torch": {
     "criteria": {
       "has_redstone": "2026-09-09 20:08:10 -0600"

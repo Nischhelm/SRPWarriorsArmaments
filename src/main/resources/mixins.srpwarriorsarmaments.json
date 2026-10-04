@@ -2,7 +2,7 @@
     "compatibilityLevel": "JAVA_8",
     "package": "com.sweeblyn.srpwarriorsarmaments.mixin",
     "refmap": "refmap.srpwarriorsarmaments.json",
-    "mixins": [],
+    "mixins": ["MixinParasiteOrbDamageImmunity"],
     "client": [],
     "server": []
 }

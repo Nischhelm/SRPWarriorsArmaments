@@ -4,12 +4,14 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 import com.sweeblyn.srpwarriorsarmaments.ModelHelper;
+import com.sweeblyn.srpwarriorsarmaments.items.ItemBlazesteelArmor;
 import com.sweeblyn.srpwarriorsarmaments.items.ItemBlazesteelCleaver;
+import com.sweeblyn.srpwarriorsarmaments.items.ItemBlazesteelGladiatorChestplate;
 import com.sweeblyn.srpwarriorsarmaments.items.ItemBlazesteelKnife;
 import com.sweeblyn.srpwarriorsarmaments.items.ItemBlazesteelMultitool;
 import com.sweeblyn.srpwarriorsarmaments.items.ItemGildedHiveBane;
 import com.sweeblyn.srpwarriorsarmaments.items.ItemGlinted;
-import com.sweeblyn.srpwarriorsarmaments.items.ItemQuenchTwo;
+import com.sweeblyn.srpwarriorsarmaments.items.ItemRancidStomach;
 import com.sweeblyn.srpwarriorsarmaments.items.ItemSemiOrganicArmor;
 import com.sweeblyn.srpwarriorsarmaments.items.ItemSemiOrganicSword;
 import com.sweeblyn.srpwarriorsarmaments.items.ItemThrongler;
@@ -35,6 +37,17 @@ public class WAItems {
 			WAToolMaterials.SEMI_ORGANIC_ARMOR, EntityEquipmentSlot.LEGS);
 	public static final Item semi_organic_boots = (Item) new ItemSemiOrganicArmor("semi_organic_boots",
 			WAToolMaterials.SEMI_ORGANIC_ARMOR, EntityEquipmentSlot.FEET);
+	
+	public static final Item blazesteel_helmet = (Item) new ItemBlazesteelArmor("blazesteel_helmet",
+			WAToolMaterials.BLAZESTEEL_ARMOR, EntityEquipmentSlot.HEAD);
+	public static final Item blazesteel_chestplate = (Item) new ItemBlazesteelArmor("blazesteel_paladin_chestplate",
+			WAToolMaterials.BLAZESTEEL_ARMOR, EntityEquipmentSlot.CHEST);
+	public static final Item blazesteel_gladiator_chestplate = (Item) new ItemBlazesteelGladiatorChestplate("blazesteel_gladiator_chestplate",
+			WAToolMaterials.BLAZESTEEL_ARMOR_GLADIATOR, EntityEquipmentSlot.CHEST);
+	public static final Item blazesteel_leggings = (Item) new ItemBlazesteelArmor("blazesteel_leggings",
+			WAToolMaterials.BLAZESTEEL_ARMOR, EntityEquipmentSlot.LEGS);
+	public static final Item blazesteel_boots = (Item) new ItemBlazesteelArmor("blazesteel_boots",
+			WAToolMaterials.BLAZESTEEL_ARMOR, EntityEquipmentSlot.FEET);
 
 	public static final Item blazesteel_dormant = (Item) new ItemWA("blazesteel_dormant");
 	public static final Item blazesteel = (Item) new ItemWA("blazesteel");
@@ -48,9 +61,11 @@ public class WAItems {
 	
 	public static final Item quench_super = (Item) new ItemWA("quench_super");
 	
+	public static final Item rancid_stomach = (Item) new ItemRancidStomach();
+	
 	public static final Item hivesilver = (Item) new ItemWA("hivesilver");
 	public static final Item hivesilver_tainted = (Item) new ItemWA("hivesilver_tainted");
-
+	
 	@SubscribeEvent
 	public static void onItemRegister(RegistryEvent.Register<Item> e) {
 		for (Field f : WAItems.class.getDeclaredFields()) {

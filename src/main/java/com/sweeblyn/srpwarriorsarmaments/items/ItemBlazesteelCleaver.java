@@ -41,8 +41,9 @@ public class ItemBlazesteelCleaver extends ItemSword {
 	
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer attacker, Entity targetEntity) {
-		if (targetEntity instanceof EntityParasiteBase && shouldApply(attacker)) {
+		if (shouldApply(attacker)&&targetEntity instanceof EntityLivingBase) {
 			EntityLivingBase target = (EntityLivingBase) targetEntity;
+			float proc = 0.5f;
 			if (target.isPotionActive(WAPotions.CONSECRATION)) {
 				int amp = target.getActivePotionEffect(WAPotions.CONSECRATION).getAmplifier();
 				
@@ -50,23 +51,18 @@ public class ItemBlazesteelCleaver extends ItemSword {
 				for (int i=0; i<3;i++) {
 					target.hurtResistantTime = 0;
 					target.attackEntityFrom(WADamageSources.CONSECRATION, (amp+1)*3);
-					System.out.println("dealing " + (amp+1)*3 + " damage");
 					target.hurtResistantTime = hurtResistantTime;
 				}
 				target.world.createExplosion(attacker, target.posX, target.posY + 1.0, target.posZ, 0.5f, false);
 				target.world.playSound(null, attacker.posX, attacker.posY, attacker.posZ, SoundEvents.ENTITY_PLAYER_HURT_ON_FIRE, SoundCategory.PLAYERS, 0.7F, 0.5F);
 				target.removePotionEffect(WAPotions.CONSECRATION);
-				
-				if (Math.random() < 0.8) {
-					target.addPotionEffect(new PotionEffect(WAPotions.CONSECRATION, 200, 0, true, true));
-					target.world.playSound(null, attacker.posX, attacker.posY, attacker.posZ, SoundEvents.ENTITY_PLAYER_HURT_ON_FIRE, SoundCategory.PLAYERS, 0.7F, 0.75F);
-				}
-			} else {
-				if (Math.random() < 0.5) {
-					target.addPotionEffect(new PotionEffect(WAPotions.CONSECRATION, 200, 0, true, true));
-					target.world.playSound(null, attacker.posX, attacker.posY, attacker.posZ, SoundEvents.ENTITY_PLAYER_HURT_ON_FIRE, SoundCategory.PLAYERS, 0.7F, 0.75F);
-				}
+				proc = proc*1.5f;
 			}
+			
+			if (Math.random() < proc) {
+				target.addPotionEffect(new PotionEffect(WAPotions.CONSECRATION, 200, 0, true, true));
+			}
+			
 
 		}
 		return super.onLeftClickEntity(stack, attacker, targetEntity);

@@ -6,6 +6,14 @@ import java.lang.reflect.Modifier;
 import com.sweeblyn.srpwarriorsarmaments.ModelHelper;
 import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemAmuletJustice;
 import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemAmuletJusticeEye;
+import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemBeltModule;
+import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemBodyPlateRegen;
+import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemCharmBleed;
+import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemCharmCorrosion;
+import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemCharmImmunity;
+import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemCharmViral;
+import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemCharmVision;
+import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemHeadGlassesHeart;
 import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemHeadMask;
 import com.sweeblyn.srpwarriorsarmaments.items.baubles.ItemTrinketBeckonPermit;
 
@@ -18,9 +26,20 @@ public class WABaubles {
 	public static final Item amulet_justice = (Item) new ItemAmuletJustice("amulet_justice");
 	public static final Item amulet_justice_eye = (Item) new ItemAmuletJusticeEye("amulet_justice_eye");
 
-	public static final Item trinket_beckon_permit = (Item) new ItemTrinketBeckonPermit("trinket_beckon_permit");
-
+	public static final Item belt_module = (Item) new ItemBeltModule("belt_module");
+	
 	public static final Item head_mask = (Item) new ItemHeadMask("head_mask");
+	public static final Item head_glasses_heart = (Item) new ItemHeadGlassesHeart("head_glasses_heart");
+	
+	public static final Item body_plate_regen = (Item) new ItemBodyPlateRegen("body_plate_regen");
+	
+	public static final Item charm_immunity = (Item) new ItemCharmImmunity("charm_immunity");
+	public static final Item charm_viral = (Item) new ItemCharmViral("charm_viral");
+	public static final Item charm_corrosion = (Item) new ItemCharmCorrosion("charm_corrosion");
+	public static final Item charm_bleed = (Item) new ItemCharmBleed("charm_bleed");
+	public static final Item charm_vision = (Item) new ItemCharmVision("charm_vision");
+	
+	public static final Item trinket_beckon_permit = (Item) new ItemTrinketBeckonPermit("trinket_beckon_permit");
 
 	@SubscribeEvent
 	public static void onItemRegister(RegistryEvent.Register<Item> e) {

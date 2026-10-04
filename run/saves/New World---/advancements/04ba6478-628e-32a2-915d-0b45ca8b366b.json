@@ -5,23 +5,17 @@
     },
     "done": true
   },
-  "minecraft:recipes/combat/wooden_sword": {
-    "criteria": {
-      "has_stick": "2026-09-09 17:54:16 -0600"
-    },
-    "done": true
-  },
-  "minecraft:recipes/tools/clock": {
-    "criteria": {
-      "has_redstone": "2026-09-09 17:54:16 -0600"
-    },
-    "done": true
-  },
   "minecraft:recipes/tools/wooden_axe": {
     "criteria": {
       "has_stick": "2026-09-09 17:54:16 -0600"
     },
     "done": true
+  },
+  "srparasites:kill_adapted": {
+    "criteria": {
+      "k_ada_longarms": "2026-09-27 00:50:40 -0600"
+    },
+    "done": false
   },
   "minecraft:recipes/tools/compass": {
     "criteria": {
@@ -35,9 +29,177 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/iron_bars": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_sword": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "srparasites:secret_root": {
+    "criteria": {
+      "tick": "2026-09-09 17:54:17 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_pickaxe": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/minecart": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/iron_door": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone": {
+    "criteria": {
+      "has_redstone_block": "2026-09-09 17:54:16 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_pickaxe": {
+    "criteria": {
+      "has_stick": "2026-09-09 17:54:16 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_hoe": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/ladder": {
+    "criteria": {
+      "has_stick": "2026-09-09 17:54:16 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_torch": {
+    "criteria": {
+      "has_redstone": "2026-09-09 17:54:16 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_brick_slab": {
+    "criteria": {
+      "has_stonebrick": "2026-09-27 00:44:07 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2026-09-09 17:54:16 -0600"
+    },
+    "done": true
+  },
+  "srparasites:monument_root": {
+    "criteria": {
+      "tick": "2026-09-09 17:54:17 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_shovel": {
+    "criteria": {
+      "has_stick": "2026-09-09 17:54:16 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_shovel": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/iron_trapdoor": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/shears": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_slab": {
+    "criteria": {
+      "has_stone": "2026-09-09 17:54:16 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/stone_pressure_plate": {
+    "criteria": {
+      "has_stone": "2026-09-09 17:54:16 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-09-27 00:50:40 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_lamp": {
+    "criteria": {
+      "has_glowstone": "2026-09-27 00:42:22 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/wooden_sword": {
+    "criteria": {
+      "has_stick": "2026-09-09 17:54:16 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/heavy_weighted_pressure_plate": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/clock": {
+    "criteria": {
+      "has_redstone": "2026-09-09 17:54:16 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_leggings": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
   "srparasites:kill_root": {
     "criteria": {
       "tick": "2026-09-09 17:54:17 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/iron_axe": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
     },
     "done": true
   },
@@ -59,21 +221,27 @@
     },
     "done": true
   },
-  "srparasites:secret_root": {
+  "minecraft:recipes/combat/shield": {
     "criteria": {
-      "tick": "2026-09-09 17:54:17 -0600"
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
     },
     "done": true
   },
-  "minecraft:recipes/redstone/redstone": {
+  "minecraft:recipes/misc/bucket": {
     "criteria": {
-      "has_redstone_block": "2026-09-09 17:54:16 -0600"
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
     },
     "done": true
   },
-  "minecraft:recipes/tools/wooden_pickaxe": {
+  "minecraft:recipes/combat/iron_boots": {
     "criteria": {
-      "has_stick": "2026-09-09 17:54:16 -0600"
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/hopper": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
     },
     "done": true
   },
@@ -83,41 +251,17 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/ladder": {
-    "criteria": {
-      "has_stick": "2026-09-09 17:54:16 -0600"
-    },
-    "done": true
-  },
-  "minecraft:recipes/redstone/redstone_torch": {
-    "criteria": {
-      "has_redstone": "2026-09-09 17:54:16 -0600"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/chest": {
-    "criteria": {
-      "has_lots_of_items": "2026-09-09 17:54:16 -0600"
-    },
-    "done": true
-  },
   "srparasites:recipes/misc/srp_field_guide": {
     "criteria": {
       "has_flesh": "2026-09-09 17:54:16 -0600"
     },
     "done": true
   },
-  "srparasites:monument_root": {
+  "srparasites:kill_pure": {
     "criteria": {
-      "tick": "2026-09-09 17:54:17 -0600"
+      "k_grunt": "2026-10-03 17:42:19 -0600"
     },
-    "done": true
-  },
-  "minecraft:recipes/tools/wooden_shovel": {
-    "criteria": {
-      "has_stick": "2026-09-09 17:54:16 -0600"
-    },
-    "done": true
+    "done": false
   },
   "minecraft:recipes/redstone/stone_button": {
     "criteria": {
@@ -131,21 +275,39 @@
     },
     "done": true
   },
+  "minecraft:recipes/combat/iron_chestplate": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
+    },
+    "done": true
+  },
   "srparasites:root": {
     "criteria": {
       "tick": "2026-09-09 17:54:17 -0600"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/stone_slab": {
+  "minecraft:story/smelt_iron": {
     "criteria": {
-      "has_stone": "2026-09-09 17:54:16 -0600"
+      "iron": "2026-09-27 00:48:42 -0600"
     },
     "done": true
   },
-  "minecraft:recipes/redstone/stone_pressure_plate": {
+  "minecraft:recipes/building_blocks/chiseled_stonebrick": {
     "criteria": {
-      "has_stone": "2026-09-09 17:54:16 -0600"
+      "has_stonebrick": "2026-09-27 00:44:07 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_brick_stairs": {
+    "criteria": {
+      "has_stonebrick": "2026-09-27 00:44:07 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/iron_helmet": {
+    "criteria": {
+      "has_iron_ingot": "2026-09-27 00:48:42 -0600"
     },
     "done": true
   }

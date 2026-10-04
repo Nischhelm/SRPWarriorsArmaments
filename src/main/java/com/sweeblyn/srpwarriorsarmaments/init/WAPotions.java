@@ -1,4 +1,4 @@
-package com.sweeblyn.srpwarriorsarmaments.init;
+ package com.sweeblyn.srpwarriorsarmaments.init;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -9,6 +9,8 @@ import com.sweeblyn.srpwarriorsarmaments.effects.PotionFeeble;
 import com.sweeblyn.srpwarriorsarmaments.effects.PotionJudgement;
 
 import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.potion.PotionType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
