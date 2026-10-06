@@ -2,11 +2,11 @@ package com.sweeblyn.srpwarriorsarmaments.items.baubles;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import com.dhanantry.scapeandrunparasites.entity.ai.misc.EntityParasiteBase;
 import com.dhanantry.scapeandrunparasites.init.SRPPotions;
 import com.sweeblyn.srpwarriorsarmaments.SRPWarriorsArmaments;
-import com.sweeblyn.srpwarriorsarmaments.init.WABaubles;
 import com.sweeblyn.srpwarriorsarmaments.init.WAPotions;
 
 import baubles.api.BaubleType;
@@ -15,23 +15,22 @@ import baubles.api.IBauble;
 import baubles.api.cap.IBaublesItemHandler;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod.EventBusSubscriber
-public class ItemCharmViral extends Item implements IBauble {
+public class ItemCharmEmblem extends Item implements IBauble {
 
 	public static final Item RING = null;
 
-	public ItemCharmViral(String name) {
+	public ItemCharmEmblem(String name) {
 
 		super();
 		this.setRegistryName(name);
@@ -48,33 +47,8 @@ public class ItemCharmViral extends Item implements IBauble {
 
 	@Override
 	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
-		if (!player.world.isRemote && player.ticksExisted % 7 == 0) {
-			Collection<PotionEffect> pl = new ArrayList<PotionEffect>(player.getActivePotionEffects());
-			for (PotionEffect p : pl) {
-				if (p.getPotion().equals(SRPPotions.VIRA_E)) {
-					player.removePotionEffect(p.getPotion());
-					player.addPotionEffect(
-							new PotionEffect(p.getPotion(), p.getDuration() - 10, p.getAmplifier(), false, false));
-					break;
-				}
-			}
-		}
-	}
-
-	@SubscribeEvent
-	public static void onLivingHurt(LivingHurtEvent event) {
-		if ((!event.getEntity().world.isRemote) && (event.getEntityLiving() instanceof EntityPlayer)
-				&& BaublesApi.isBaubleEquipped((EntityPlayer) event.getEntityLiving(), WABaubles.charm_viral) != -1) {
-			
-			EntityLivingBase atk = (EntityLivingBase) event.getSource().getTrueSource();
-			
-			if (event.getEntityLiving().isPotionActive(SRPPotions.VIRA_E) && atk instanceof EntityParasiteBase) {
-				atk.addPotionEffect(new PotionEffect(WAPotions.FEEBLE, 200,
-						event.getEntityLiving().getActivePotionEffect(SRPPotions.VIRA_E).getAmplifier(), false, false));
-				// atk.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 200,
-				// event.getEntityLiving().getActivePotionEffect(SRPPotions.VIRA_E).getAmplifier()/2,
-				// false, false));
-			}
+		if (!player.world.isRemote&&player.ticksExisted % 600 == 0) {
+			player.addPotionEffect(new PotionEffect(WAPotions.DIVINE, 595 , player.isPotionActive(WAPotions.DIVINE) ? 0+player.getActivePotionEffect(WAPotions.DIVINE).getAmplifier() : 0  , false, true));
 		}
 	}
 

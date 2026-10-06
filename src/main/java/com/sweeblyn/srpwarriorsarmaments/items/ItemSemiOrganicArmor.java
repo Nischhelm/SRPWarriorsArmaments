@@ -28,7 +28,7 @@ public class ItemSemiOrganicArmor extends ItemArmor {
         int numPieces = getTotalPieces(player);
         if (player.ticksExisted % 600 == 0) {
         	if (numPieces > 0) {
-        		player.addPotionEffect(new PotionEffect(WAPotions.DIVINE, 595   , numPieces-1  , false, true));
+        		player.addPotionEffect(new PotionEffect(WAPotions.DIVINE, 595 , player.isPotionActive(WAPotions.DIVINE) ? numPieces-1+player.getActivePotionEffect(WAPotions.DIVINE).getAmplifier() : numPieces-1  , false, true));
         	}
         }
     }

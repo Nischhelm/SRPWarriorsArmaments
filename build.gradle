@@ -106,7 +106,7 @@ jar {
             'FMLCorePluginContainsFMLMod': 'true',
             'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
             'TweakOrder': '0'
-            'MixinConfigs': mod_mixin_configs.replace('${mod_id}', mod_id)
+            //'MixinConfigs': mod_mixin_configs.replace('${mod_id}', mod_id)
     )
 }
 

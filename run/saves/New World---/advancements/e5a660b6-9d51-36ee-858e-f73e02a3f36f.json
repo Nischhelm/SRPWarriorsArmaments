@@ -5,6 +5,12 @@
     },
     "done": false
   },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2026-10-04 09:06:06 -0600"
+    },
+    "done": true
+  },
   "srparasites:firmamentum_root": {
     "criteria": {
       "tick": "2026-09-10 15:29:54 -0600"
@@ -53,6 +59,12 @@
     },
     "done": true
   },
+  "srparasites:columbus": {
+    "criteria": {
+      "unlock": "2026-10-04 09:06:12 -0600"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/stonebrick": {
     "criteria": {
       "has_stone": "2026-09-10 15:46:36 -0600"
@@ -80,6 +92,12 @@
   "minecraft:recipes/redstone/stone_pressure_plate": {
     "criteria": {
       "has_stone": "2026-09-10 15:46:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_lamp": {
+    "criteria": {
+      "has_glowstone": "2026-10-04 09:06:06 -0600"
     },
     "done": true
   }
