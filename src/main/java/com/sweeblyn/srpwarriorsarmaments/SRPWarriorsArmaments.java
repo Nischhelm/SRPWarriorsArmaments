@@ -17,16 +17,22 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = SRPWarriorsArmaments.MOD_ID, dependencies = SRPWarriorsArmaments.DEPENDANCY)
+@Mod(
+        modid = SRPWarriorsArmaments.MOD_ID,
+        name = SRPWarriorsArmaments.MOD_NAME,
+        dependencies = SRPWarriorsArmaments.DEPENDENCY
+)
 public class SRPWarriorsArmaments {
-	
-    public static final CreativeTabs tab;
-    public static SRPWarriorsArmaments instance;
-    public static final Logger LOGGER;
-	
     public static final String MOD_ID = "srpwarriorsarmaments";
-    
-    public static final String DEPENDANCY = "required-after:srparasites";
+    public static final String MOD_NAME = "Scape and Run: Warrior's Armaments";
+    public static final String DEPENDENCY = "required-after:srparasites@[1.10.0,)";
+    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+
+    public static final CreativeTabs tab = new CreativeTabs("srpwarriorsarmaments.name") {
+        public ItemStack createIcon() {
+            return new ItemStack(WAItems.semi_organic_sword);
+        }
+    };
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
@@ -39,15 +45,5 @@ public class SRPWarriorsArmaments {
         if (Loader.isModLoaded("baubles")) {
 			MinecraftForge.EVENT_BUS.register(WABaubles.class);
 		}
-    }
-    
-    static {
-        SRPWarriorsArmaments.instance = null;
-        LOGGER = LogManager.getLogger("srpwarriorsarmaments");
-        tab = new CreativeTabs("srpwarriorsarmaments.name") {
-            public ItemStack createIcon() {
-                return new ItemStack(WAItems.semi_organic_sword);
-            }
-        };
     }
 }
