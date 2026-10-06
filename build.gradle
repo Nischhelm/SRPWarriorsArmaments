@@ -8,7 +8,7 @@ plugins {
 
 version = mod_version
 group = mod_group
-base.archivesBaseName = mod_id
+base.archivesName = mod_id
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
