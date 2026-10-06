@@ -89,7 +89,8 @@ jar {
                 'ForceLoadAsMod'          : true,
                 'TweakClass'              : 'org.spongepowered.asm.launch.MixinTweaker',
                 'MixinConfigs'            : "mixins.${mod_id}.json"
-    ])
+        ])
+    }
 }
 
 jar.finalizedBy('reobfJar')
