@@ -3,9 +3,8 @@ package com.sweeblyn.srpwarriorsarmaments.effects;
 import com.dhanantry.scapeandrunparasites.entity.ai.misc.EntityParasiteBase;
 import com.sweeblyn.srpwarriorsarmaments.SRPWarriorsArmaments;
 import com.sweeblyn.srpwarriorsarmaments.misc.damagesources.WADamageSources;
-import com.sweeblyn.srpwarriorsarmaments.util.MirrorUtils;
-import com.sweeblyn.srpwarriorsarmaments.util.MirrorUtils.IField;
 
+import com.sweeblyn.srpwarriorsarmaments.mixin.EntityParasiteBaseAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,8 +21,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class PotionConsecration extends Potion {
 	private final ResourceLocation potionIcon;
-	protected static final IField<Double> killcount$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "killcount");
 
 	public PotionConsecration() {
 		super(false, 0xffcb00);
@@ -61,8 +58,8 @@ public class PotionConsecration extends Potion {
 	public void performEffect(EntityLivingBase entityLivingBaseIn, int amplifier) {
 		if (entityLivingBaseIn instanceof EntityParasiteBase
 				&& !entityLivingBaseIn.isPotionActive(MobEffects.FIRE_RESISTANCE)) {
-			killcount$EntityParasiteBase.set(entityLivingBaseIn,
-					Math.max(0, killcount$EntityParasiteBase.get(entityLivingBaseIn) - 1));
+			EntityParasiteBaseAccessor para = (EntityParasiteBaseAccessor) entityLivingBaseIn;
+			para.setKillcount(Math.max(0, para.getKillcount() - 1));
 		}
 	}
 

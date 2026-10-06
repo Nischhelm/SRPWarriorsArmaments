@@ -1,6 +1,5 @@
 package com.sweeblyn.srpwarriorsarmaments.mixin;
 
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
@@ -14,14 +13,9 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-@Debug(export=true)
 @Mixin(EntityOrbScary.class)
-public abstract class MixinParasiteOrbDamageImmunity extends Entity{
-	private MixinParasiteOrbDamageImmunity(World worldIn) {
-		super(worldIn);
-	}
-	
-	@ModifyConstant(method = "selfExplode()V",  constant = @Constant(floatValue = 5.0F), require = 1)
+public abstract class MixinParasiteOrbDamageImmunity {
+	@ModifyConstant(method = "selfExplode()V",  constant = @Constant(floatValue = 5.0F), remap = false)
 	private float srpwarriorsarmaments_orbDamageImmunity(float value, @Local(ordinal = 0) EntityLivingBase mob) {
 		if (mob instanceof EntityPlayer) {
 			EntityPlayer p = (EntityPlayer) mob;

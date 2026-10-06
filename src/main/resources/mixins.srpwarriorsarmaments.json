@@ -1,8 +1,13 @@
 {
     "compatibilityLevel": "JAVA_8",
     "package": "com.sweeblyn.srpwarriorsarmaments.mixin",
-    "refmap": "refmap.srpwarriorsarmaments.json",
-    "mixins": ["MixinParasiteOrbDamageImmunity"],
-    "client": [],
-    "server": []
+    "refmap": "mixins.srpwarriorsarmaments.refmap.json",
+    "target": "@env(DEFAULT)",
+    "minVersion": "0.8",
+    "mixins": [
+        "MixinParasiteOrbDamageImmunity",
+        "EntityParasiteBaseAccessor",
+        "EntityPMalleableAccessor"
+    ],
+    "client": []
 }

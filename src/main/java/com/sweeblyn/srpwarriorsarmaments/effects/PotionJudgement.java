@@ -5,9 +5,9 @@ import com.dhanantry.scapeandrunparasites.entity.ai.misc.EntityParasiteBase;
 import com.dhanantry.scapeandrunparasites.init.SRPPotions;
 import com.dhanantry.scapeandrunparasites.world.SRPSaveData;
 import com.sweeblyn.srpwarriorsarmaments.SRPWarriorsArmaments;
-import com.sweeblyn.srpwarriorsarmaments.util.MirrorUtils;
-import com.sweeblyn.srpwarriorsarmaments.util.MirrorUtils.IField;
 
+import com.sweeblyn.srpwarriorsarmaments.mixin.EntityPMalleableAccessor;
+import com.sweeblyn.srpwarriorsarmaments.mixin.EntityParasiteBaseAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.entity.EntityLivingBase;
@@ -20,33 +20,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class PotionJudgement extends Potion {
 	private final ResourceLocation potionIcon;
-	protected static final IField<Boolean> geneMindam$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "geneMindam");
-	protected static final IField<Boolean> geneDamcap$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "geneDamcap");
-	protected static final IField<Boolean> geneLookwall$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "geneLookwall");
-	protected static final IField<Boolean> geneSprinting$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "geneSprinting");
-	protected static final IField<Boolean> geneWaterleap$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "geneWaterleap");
-	protected static final IField<Boolean> geneSpecialmove$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "geneSpecialmove");
-	protected static final IField<Float> genePoisonHealing$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "genePoisonHealing");
-	protected static final IField<Float> geneMobHealing$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "geneMobHealing");
-	protected static final IField<Float> geneAttackSpeed$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "geneAttackSpeed");
-
-	protected static final IField<Boolean> geneAdaptation$EntityPMalleable = MirrorUtils
-			.reflectField(EntityPMalleable.class, "geneAdaptation");
-	protected static final IField<Boolean> geneBlocksearch$EntityPMalleable = MirrorUtils
-			.reflectField(EntityPMalleable.class, "geneBlocksearch");
-	protected static final IField<Boolean> geneResidue$EntityPMalleable = MirrorUtils
-			.reflectField(EntityPMalleable.class, "geneResidue");
-	protected static final IField<Boolean> geneOrbbox$EntityPMalleable = MirrorUtils
-			.reflectField(EntityPMalleable.class, "geneOrbbox");
 
 	public PotionJudgement() {
 		super(false, 0xffcb00);
@@ -67,36 +40,48 @@ public class PotionJudgement extends Potion {
 			if (entityLivingBaseIn.isPotionActive(SRPPotions.PIVOT_E)) {
 				atkSpeed = (0.5f*amplifier)+1.0f;
 			}
+
+			EntityParasiteBaseAccessor paraAcc = (EntityParasiteBaseAccessor) entityLivingBaseIn;
 			if (entityLivingBaseIn instanceof EntityPMalleable) {
-								((EntityPMalleable) entityLivingBaseIn).applyGene(
-						new boolean[] { geneMindam$EntityParasiteBase.get(entityLivingBaseIn),
-								geneDamcap$EntityParasiteBase.get(entityLivingBaseIn),
-								geneLookwall$EntityParasiteBase.get(entityLivingBaseIn),
-								geneSprinting$EntityParasiteBase.get(entityLivingBaseIn),
-								geneWaterleap$EntityParasiteBase.get(entityLivingBaseIn),
-								geneSpecialmove$EntityParasiteBase.get(entityLivingBaseIn),
+				EntityPMalleableAccessor mallAcc = (EntityPMalleableAccessor) entityLivingBaseIn;
 
-								geneAdaptation$EntityPMalleable.get(entityLivingBaseIn),
-								geneBlocksearch$EntityPMalleable.get(entityLivingBaseIn),
-								geneResidue$EntityPMalleable.get(entityLivingBaseIn),
-								geneOrbbox$EntityPMalleable.get(entityLivingBaseIn) },
+				((EntityParasiteBase) entityLivingBaseIn).applyGene(
+						new boolean[]{
+								paraAcc.getGeneMindam(),
+								paraAcc.getGeneDamcap(),
+								paraAcc.getGeneLookwall(),
+								paraAcc.getGeneSprinting(),
+								paraAcc.getGeneWaterleap(),
+								paraAcc.getGeneSpecialmove(),
 
-						new float[] { genePoisonHealing$EntityParasiteBase.get(entityLivingBaseIn),
-								geneMobHealing$EntityParasiteBase.get(entityLivingBaseIn),
-								entityLivingBaseIn.getActivePotionEffect(this).getDuration() > 1 ? atkSpeed : dataS.getGeneModi2(id)[2] });
+								mallAcc.getGeneAdaptation(),
+								mallAcc.getGeneBlocksearch(),
+								mallAcc.getGeneResidue(),
+								mallAcc.getGeneOrbbox()
+						},
 
+						new float[]{
+								paraAcc.getGenePoisonHealing(),
+								paraAcc.getGeneMobHealing(),
+								entityLivingBaseIn.getActivePotionEffect(this).getDuration() > 1 ? atkSpeed : dataS.getGeneModi2(id)[2]
+						}
+				);
 			} else {
 				((EntityParasiteBase) entityLivingBaseIn).applyGene(
-						new boolean[] { geneMindam$EntityParasiteBase.get(entityLivingBaseIn),
-								geneDamcap$EntityParasiteBase.get(entityLivingBaseIn),
-								geneLookwall$EntityParasiteBase.get(entityLivingBaseIn),
-								geneSprinting$EntityParasiteBase.get(entityLivingBaseIn),
-								geneWaterleap$EntityParasiteBase.get(entityLivingBaseIn),
-								geneSpecialmove$EntityParasiteBase.get(entityLivingBaseIn) },
-						
-						new float[] { genePoisonHealing$EntityParasiteBase.get(entityLivingBaseIn),
-								geneMobHealing$EntityParasiteBase.get(entityLivingBaseIn),
-								entityLivingBaseIn.getActivePotionEffect(this).getDuration() > 1 ? atkSpeed : dataS.getGeneModi2(id)[2] });
+						new boolean[]{
+								paraAcc.getGeneMindam(),
+								paraAcc.getGeneDamcap(),
+								paraAcc.getGeneLookwall(),
+								paraAcc.getGeneSprinting(),
+								paraAcc.getGeneWaterleap(),
+								paraAcc.getGeneSpecialmove()
+						},
+
+						new float[]{
+								paraAcc.getGenePoisonHealing(),
+								paraAcc.getGeneMobHealing(),
+								entityLivingBaseIn.getActivePotionEffect(this).getDuration() > 1 ? atkSpeed : dataS.getGeneModi2(id)[2]
+						});
 			}
 		}
 	}

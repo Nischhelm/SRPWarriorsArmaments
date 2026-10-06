@@ -1,11 +1,8 @@
 package com.sweeblyn.srpwarriorsarmaments.effects;
 
 import com.dhanantry.scapeandrunparasites.entity.ai.misc.EntityParasiteBase;
-import com.dhanantry.scapeandrunparasites.init.SRPPotions;
-import com.dhanantry.scapeandrunparasites.util.config.SRPConfig;
 import com.sweeblyn.srpwarriorsarmaments.SRPWarriorsArmaments;
-import com.sweeblyn.srpwarriorsarmaments.util.MirrorUtils;
-import com.sweeblyn.srpwarriorsarmaments.util.MirrorUtils.IField;
+import com.sweeblyn.srpwarriorsarmaments.mixin.EntityParasiteBaseAccessor;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -20,8 +17,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class PotionFeeble extends Potion {
 	private final ResourceLocation potionIcon;
-	protected static final IField<Float> MiniDamage$EntityParasiteBase = MirrorUtils
-			.reflectField(EntityParasiteBase.class, "MiniDamage");
 	
 	public PotionFeeble() {
 		super(false, 0xffcb00);
@@ -38,14 +33,17 @@ public class PotionFeeble extends Potion {
 		if (entityLivingBaseIn instanceof EntityParasiteBase) {
 			
 			final NBTTagCompound tags = entityLivingBaseIn.getEntityData();
-			
+
+			EntityParasiteBase para = (EntityParasiteBase) entityLivingBaseIn;
+			EntityParasiteBaseAccessor paraAcc = (EntityParasiteBaseAccessor) entityLivingBaseIn;
+
 			if (entityLivingBaseIn.getActivePotionEffect(this).getDuration() <= 2) {
-				MiniDamage$EntityParasiteBase.set(entityLivingBaseIn, tags.getFloat("srpwa_storedmindamage"));
+				paraAcc.setMiniDamage(tags.getFloat("srpwa_storedmindamage"));
 			}
 			else if (!tags.hasKey("srpwa_storedmindamage")) {
-				tags.setFloat("srpwa_storedmindamage", MiniDamage$EntityParasiteBase.get(entityLivingBaseIn));
+				tags.setFloat("srpwa_storedmindamage", para.getMiniDamage());
 			} else {
-				MiniDamage$EntityParasiteBase.set(entityLivingBaseIn, Math.max(tags.getFloat("srpwa_storedmindamage")*(1-(0.2f*(amplifier+1))), 0.05f));
+				paraAcc.setMiniDamage(Math.max(tags.getFloat("srpwa_storedmindamage")*(1-(0.2f*(amplifier+1))), 0.05f));
 			}
 		}
 	}
